@@ -12,7 +12,7 @@ RSpec.describe Category, type: :model do
 
   it 'should have and belongs to many categories' do
     payment = Category.reflect_on_association(:payments)
-    expect(payment.macro).to eq(:has_and_belongs_to_many)
+    expect(payment.macro).to eq(:has_many)
   end
 
   it 'should belongs to user' do

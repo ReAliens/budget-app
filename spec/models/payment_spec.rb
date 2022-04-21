@@ -1,8 +1,9 @@
 require 'rails_helper'
 
 RSpec.describe Payment, type: :model do
-  user = User.create(name: 'Barbare')
-  payment = Payment.new(user: user, name: 'jumping rope', amount: 23)
+  user = User.new(name: 'Barbare')
+  category = Category.new(user: user, name: 'macdonalds', icon: 'icon')
+  payment = Payment.new(user: user, category: category, name: 'billing', amount: 23)
 
   before { payment.save }
 
@@ -11,8 +12,8 @@ RSpec.describe Payment, type: :model do
   end
 
   it 'should have and belongs to many categories' do
-    category = Payment.reflect_on_association(:categories)
-    expect(category.macro).to eq(:has_and_belongs_to_many)
+    category = Payment.reflect_on_association(:category)
+    expect(category.macro).to eq(:belongs_to)
   end
 
   it 'should belongs to user' do
