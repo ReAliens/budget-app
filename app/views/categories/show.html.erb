@@ -1,0 +1,23 @@
+  <%= render 'shared/header',title:'Categories',image:'back.svg',target_link: categories_path%>
+  <div class="flex justify-between bg-white p-5 text-main-300 text-2xl">
+  <span>Total payments</span>
+  <span>$ <%= Payment.total_amounts(@category.payments)%></span>
+  </div>
+
+  <div class="p-4">
+      <% if @category.payments.empty? %>
+      <p> No Payments Added Yet</p>
+      <%else%>
+      <% @category.payments.each do |payment|%>
+      <%= render "shared/card_show", payment: payment %>
+      <%end%>
+      <%end%>
+      <%= link_to new_payment_path do%>
+      <div class="w-screen flex justify-center fixed bottom-0 bg-main-200 p-4 hover:cursor-pointer">
+          <div
+              class="h-20 flex justify-center items-center p-4  bg-main-200 text-white w-fit text-3xl border-2 border-white">
+              <p>Add Payment</p>
+          </div>
+      </div>
+      <%end%>
+  </div>
