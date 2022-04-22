@@ -1,0 +1,28 @@
+    <%= render 'shared/header',title:'Payments',image:'back.svg',target_link: categories_path%>
+
+    <div class="flex flex-col w-screen h-full ">
+        <%= form_with model: @payment, method: :post, local: true do |form| %>
+        <div class="h-2/4 justify-center items-center mt-32">
+
+            <div class="flex flex-col text-main-300 px-4">
+                <%= form.label :Name%>
+                <%= form.text_field :name, required: true, placeholder: "Payment Name" %>
+            </div>
+            <div class="flex flex-col text-main-300 px-4 mt-10">
+                <%= form.label :Amount %>
+                <%= form.number_field :amount, step:1, required: true, placeholder: "Payment Amount"%>
+            </div>
+            <div class="flex flex-col text-main-300 px-4 mt-10">
+                <%= form.label :Category%>
+                <%= form.select :category_id, @categories.collect { |category| [category.name, category.id] }, { :prompt => 'Select Category'}, required: true %>
+            </div>
+            <div class="w-screen flex justify-center fixed bottom-0 bg-main-200 p-4 hover:cursor-pointer">
+
+                <div
+                    class="h-20 flex justify-center items-center p-4  bg-main-200 text-white w-fit text-3xl border-2 border-white">
+                    <%= form.submit "Save" %>
+                </div>
+            </div>
+        </div>
+        <% end %>
+    </div>
