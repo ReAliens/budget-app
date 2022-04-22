@@ -20,7 +20,7 @@ class CategoriesController < ApplicationController
   end
 
   def show
-    @category = Category.includes(:payments).find(params[:id])
+    @category = Category.includes(:payments).order('created_at DESC').find(params[:id])
   end
 
   private

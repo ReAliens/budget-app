@@ -1,4 +1,4 @@
-<div class="bg-white w-full p-3 my-2">
+<div class="bg-white w-full p-3 my-2 h-[320px]">
     <div class="grid grid-cols-4 gap-6 border-b-2 border-slate-200 pb-4">
         <div class="w-full col-span-1 h-[100px] flex items-center object-cover">
             <%= image_tag payment.category.icon %>
@@ -11,7 +11,7 @@
         <p>Created By: <%= payment.user.name%> </p>
         <p>Created at: <%= payment.created_at%> </p>
     </div>
-    <div class="flex w-full justify-between px-2 text-main-300 py-5 text-3xl">
+    <div class="flex w-full justify-between items-center px-2 text-main-300 py-5 text-3xl">
         <span>Total Payment</span>
         <span>$ <%= payment.amount%></span>
     </div>
