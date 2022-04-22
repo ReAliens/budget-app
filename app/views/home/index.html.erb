@@ -1,12 +1,8 @@
 <div class="overflow-hidden h-[100vh]  bg-main-100">
-    <div class="sticky flex justify-end items-center top-0 h-16 w-screen ">
+    <div class="sticky flex justify-end items-center top-0 h-16 w-screen z-10 ">
         <div class="flex px-4 mr-6 w-52 justify-between text-white font-bold">
-            <span>
-                Sign in
-            </span>
-            <span>
-                Registser
-            </span>
+            <%= link_to "Log In", new_user_session_path %>
+            <%= link_to "Sign Up", new_user_registration_path %>
         </div>
     </div>
     <div>
