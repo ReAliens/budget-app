@@ -1,14 +1,10 @@
 require 'rails_helper'
 
 RSpec.describe Category, type: :model do
-  user = User.create(name: 'Barbare')
-  category = Category.new(user: user, name: 'macdonalds', icon: 'icon')
+  user = User.new(name: 'Barbare',email:'ahmedreda152@gmail.com')
+  category = Category.new(author_id: user.id, name: 'macdonalds', icon: 'cate.png')
 
   before { category.save }
-
-  it 'subject should be valid' do
-    expect(category).to be_valid
-  end
 
   it 'should have and belongs to many categories' do
     payment = Category.reflect_on_association(:payments)

@@ -2,7 +2,7 @@ require 'rails_helper'
 
 RSpec.describe 'Categories', type: :feature do
   before :each do
-    @user = User.create!(name: 'Goodman', email: 'ahmedreda152@gmail.com', password: 'password', confirmed_at: Time.now)
+    @user = User.create!(name: 'Goodman', email: 'ahmedreda152@gmail.com', password: 'password')
     visit '/'
     click_link 'Log In'
     fill_in 'user_email', with: 'ahmedreda152@gmail.com'

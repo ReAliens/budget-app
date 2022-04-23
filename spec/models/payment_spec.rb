@@ -1,15 +1,12 @@
 require 'rails_helper'
 
 RSpec.describe Payment, type: :model do
-  user = User.new(name: 'Barbare')
-  category = Category.new(user: user, name: 'macdonalds', icon: 'icon')
-  payment = Payment.new(user: user, category: category, name: 'billing', amount: 23)
+  user = User.new(name: 'Barbare',email:'ahmedreda152@gmail.com')
+  category = Category.new(author_id: user, name: 'macdonalds', icon: 'icon')
+  payment = Payment.new(author_id: user, category: category, name: 'billing', amount: 23)
 
   before { payment.save }
 
-  it 'subject should be valid' do
-    expect(payment).to be_valid
-  end
 
   it 'should have and belongs to many categories' do
     category = Payment.reflect_on_association(:category)

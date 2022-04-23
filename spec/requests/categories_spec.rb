@@ -1,20 +1,9 @@
 require 'rails_helper'
 
-RSpec.describe 'Categories', type: :request do
-  describe 'GET /index' do
-    before :each do
-      get '/categories'
-    end
-    it 'renders the right tempelate' do
-      expect(response).to render_template(:index)
-    end
-
-    it 'the response body includes the correct placeholder text' do
-      expect(response.body).to include('Find me in app/views/categories/index.html.erb')
-    end
-
-    it 'the correct response status' do
-      expect(response.status).to eq(200)
-    end
+RSpec.describe CategoriesController, type: :controller do
+  context 'routes' do
+    it { should route(:get, '/categories/1').to(action: :show, id: 1) }
+    it { should route(:post, '/categories').to(action: :create) }
+    it { should route(:get, '/categories/new').to(action: :new) }
   end
 end

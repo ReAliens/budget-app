@@ -1,12 +1,8 @@
 require 'rails_helper'
 
 RSpec.describe User, type: :model do
-  user = User.create(name: 'Ahmed')
+  user = User.new(name: 'Barbare',email:'ahmedreda152@gmail.com')
   before { user.save }
-
-  it 'user should be valid' do
-    expect(user).to be_valid
-  end
 
   it 'should have many categories' do
     category = User.reflect_on_association(:categories)
