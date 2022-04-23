@@ -1,4 +1,7 @@
 class PaymentsController < ApplicationController
+  before_action :authenticate_user!
+  load_and_authorize_resource except: :create
+
   def index
     @payments = current_user.payments.order('created_at DESC')
   end

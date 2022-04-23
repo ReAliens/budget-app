@@ -22,14 +22,14 @@ RSpec.describe 'Categories index page', type: :feature do
     expect(current_path).to eq(new_payment_path)
   end
 
-    it 'should display the created transaction' do
-      @category = @user.categories.create!(name: 'Foods', icon: 'cate.png')
-      @payment = @user.payments.create!(name: 'Rice Payment', amount: 100, category: @category)
-      visit '/payments'
-      expect(page).to have_content('Payments')
-      expect(page).to have_content('Total payments')
-      expect(page).to have_content(@payment.created_at)
-      expect(page).to have_content('$ 100')
-      expect(page).to have_link('Add Payment')
-    end
+  it 'should display the created transaction' do
+    @category = @user.categories.create!(name: 'Foods', icon: 'cate.png')
+    @payment = @user.payments.create!(name: 'Rice Payment', amount: 100, category: @category)
+    visit '/payments'
+    expect(page).to have_content('Payments')
+    expect(page).to have_content('Total payments')
+    expect(page).to have_content(@payment.created_at)
+    expect(page).to have_content('$ 100')
+    expect(page).to have_link('Add Payment')
+  end
 end
