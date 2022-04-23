@@ -1,6 +1,7 @@
 <div>
   <%= render 'shared/header',title:'Categories',image:'',target_link: ''%>
-  <div class="flex flex-col">
+  <%= render 'shared/flash'%>
+  <div class="flex flex-col overflow-scroll h-[75vh]">
     <% if @categories.empty? %>
     <div>
       <p> No Categories Added</p>
