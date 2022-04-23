@@ -1,7 +1,7 @@
 require 'rails_helper'
 
 RSpec.describe User, type: :model do
-  user = User.new(name: 'Barbare',email:'ahmedreda152@gmail.com')
+  user = User.new(name: 'Barbare', email: 'ahmedreda152@gmail.com')
   before { user.save }
 
   it 'should have many categories' do

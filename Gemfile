@@ -60,9 +60,9 @@ end
 
 group :development do
   # Use console on exceptions pages [https://github.com/rails/web-console]
-  gem 'web-console'
-    gem 'database_cleaner'
+  gem 'database_cleaner'
   gem 'factory_bot_rails'
+  gem 'web-console'
 
   # Add speed badges [https://github.com/MiniProfiler/rack-mini-profiler]
   # gem "rack-mini-profiler"
@@ -74,12 +74,11 @@ end
 group :test do
   # Use system testing [https://guides.rubyonrails.org/testing.html#system-testing]
   gem 'capybara'
-  gem 'selenium-webdriver'
-  gem 'webdrivers'
-  gem 'shoulda-matchers'
-   gem 'faker', git: 'https://github.com/stympy/faker.git', branch: 'master'
+  gem 'faker', git: 'https://github.com/stympy/faker.git', branch: 'master'
   gem 'ffi', '~> 1.15', '>= 1.15.5'
-
+  gem 'selenium-webdriver'
+  gem 'shoulda-matchers'
+  gem 'webdrivers'
 end
 gem 'rails-controller-testing'
 

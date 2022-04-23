@@ -1,7 +1,7 @@
 require 'rails_helper'
 
 RSpec.describe Category, type: :model do
-  user = User.new(name: 'Barbare',email:'ahmedreda152@gmail.com')
+  user = User.new(name: 'Barbare', email: 'ahmedreda152@gmail.com')
   category = Category.new(author_id: user.id, name: 'macdonalds', icon: 'cate.png')
 
   before { category.save }
