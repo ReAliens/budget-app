@@ -1,0 +1,11 @@
+<% flash.each do |type, msg| %>
+  <% if type == 'alert' %>
+  <div class="py-5 text-center rounded-md text-white bg-yellow-400" >
+    <%= msg %>
+  </div>
+  <% else %>
+  <div class="py-5 text-center rounded-md text-white bg-main-200">
+    <%= msg %>
+  </div>
+  <% end %>
+<% end %>

@@ -1,0 +1,25 @@
+<div>
+  <%= render 'shared/header',title:'Categories',image:'',target_link: ''%>
+  <%= render 'shared/flash'%>
+  <div class="flex flex-col overflow-scroll h-[75vh]">
+    <% if @categories.empty? %>
+    <div>
+      <p> No Categories Added</p>
+    </div>
+    <% else %>
+    <div class="p-4">
+      <% @categories.each do |category| %>
+      <%= render "shared/card_category", category: category %>
+      <%end%>
+    </div>
+    <%end%>
+  </div>
+  <div>
+  <%= link_to new_category_path do%>
+  <div class="w-screen flex justify-center fixed bottom-0 bg-main-200 p-4 hover:cursor-pointer">
+  <div class="h-20 flex justify-center items-center p-4  bg-main-200 text-white w-fit text-3xl border-2 border-white">
+  <p>Add Category</p>
+  </div>
+  </div>
+  <%end%>
+</div>

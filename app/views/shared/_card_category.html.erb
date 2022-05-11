@@ -1,0 +1,16 @@
+<%= link_to category_path(category)  do %>
+<div class="bg-white w-full grid grid-cols-4 gap-2 p-3 my-2">
+    <div class="w-full col-span-1 h-[100px] flex items-center object-cover">
+        <%= image_tag category.icon %>
+    </div>
+    <div class="col-span-3 flex flex-col justify-around py-5">
+        <div class="flex justify-between w-full">
+            <span class="text-main-300"><%= category.name %> </span>
+            <span class="text-main-300">$ <%= Payment.total_amounts(category.payments)%></span>
+        </div>
+        <div class="text-main-300"  >
+        <%= category.created_at %>
+        </div>
+    </div>
+</div>
+<%end%>

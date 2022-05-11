@@ -1,0 +1,13 @@
+<header class="flex justify-between items-center px-2 bg-main-100 py-5">
+    <div class="w-10 text-white">
+        <%= link_to image_tag(image) ,target_link%>
+    </div>
+
+    <div class="text-white text-3xl">
+        <span><%=title%></span>
+    </div>
+    <div class="flex items-center text-white">
+        <%= link_to image_tag('cate.png') ,categories_path%>
+        <%= link_to image_tag('pay.png') ,payments_path%>
+    </div>
+</header>

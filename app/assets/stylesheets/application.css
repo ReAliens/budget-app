@@ -13,3 +13,13 @@
  *= require_tree .
  *= require_self
  */
+
+.input {
+  width: 95%;
+  border: none;
+  margin-top: 5px;
+}
+
+.input:focus {
+  outline: none;
+}
